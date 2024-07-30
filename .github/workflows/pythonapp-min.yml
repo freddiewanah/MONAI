@@ -10,6 +10,9 @@ on:
       - releasing/*
   pull_request:
 
+  # Allow job to be triggered manually.
+  workflow_dispatch:
+
 concurrency:
   # automatically cancel the previously triggered workflows when there's a newer version
   group: build-min-${{ github.event.pull_request.number || github.ref }}
